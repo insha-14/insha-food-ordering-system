@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Menu | Insha Food Ordering System</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .menu-intro {
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .menu-intro h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: #6f4328;
+        }
+
+        .menu-intro p {
+            max-width: 700px;
+            margin: 15px auto;
+        }
+
+        .menu-section {
+            padding: 30px 0;
+        }
+
+        .menu-section h2 {
+            color: #6f4328;
+            margin-bottom: 25px;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+        }
+
+        .food-card {
+            overflow: hidden;
+            border-radius: 18px;
+            background: #fffaf2;
+            box-shadow: 0 8px 25px rgba(68, 43, 25, 0.13);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: cardAppear 0.7s ease both;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 30px rgba(68, 43, 25, 0.2);
+        }
+
+        .food-card img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #ead9c4;
+        }
+
+        .food-card-content {
+            padding: 18px;
+        }
+
+        .food-card-content h3 {
+            color: #6f4328;
+            margin-bottom: 10px;
+        }
+
+        .food-card-content p {
+            line-height: 1.6;
+        }
+
+        .food-price {
+            display: block;
+            color: #81522e;
+            font-size: 1.2rem;
+            margin-top: 12px;
+        }
+
+        .management-section {
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 18px;
+            background: rgba(255, 250, 242, 0.94);
+        }
+
+        .food-form input,
+        .food-form select,
+        .food-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 14px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 25px;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        .table-container th,
+        .table-container td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5d5c2;
+        }
+
+        .table-container th {
+            background: #6f4328;
+            color: white;
+        }
+
+        .table-container button {
+            margin: 3px;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .food-card img {
+                height: 200px;
+            }
+
+            .management-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="logo">Insha Food 🍽️</a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="nav-button">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="menu-intro">
+        <p class="eyebrow">Fresh • Flavourful • Made with Love</p>
+        <h1>Discover Our Delicious Menu 🤎</h1>
+        <p>
+            Welcome to Insha Food! Explore delicious pizzas, juicy burgers,
+            Indian favourites, pasta, desserts and refreshing drinks.
+            There is something tasty for everyone.
+        </p>
+    </section>
+
+    <section class="menu-section">
+        <h2>🍕 Pizza & Fast Food</h2>
+
+        <div class="food-grid" id="popularFoodList">
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=85"
+                    alt="Freshly baked cheese pizza"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Classic Cheese Pizza</h3>
+                    <p>Golden crust, melted cheese, tomato and aromatic herbs.</p>
+                    <strong class="food-price">₹199</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=85"
+                    alt="Juicy classic burger"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Classic Burger</h3>
+                    <p>A juicy burger layered with fresh vegetables and sauce.</p>
+                    <strong class="food-price">₹149</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=700&q=85"
+                    alt="Delicious burger and fries"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Burger & Fries</h3>
+                    <p>A satisfying meal with crispy golden fries.</p>
+                    <strong class="food-price">₹189</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=85"
+                    alt="Colourful vegetable pizza"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Veggie Pizza</h3>
+                    <p>A colourful combination of vegetables, cheese and herbs.</p>
+                    <strong class="food-price">₹219</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <h2>🍛 Indian Favourites</h2>
+
+        <div class="food-grid">
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=85"
+                    alt="Indian biryani rice dish"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Chicken Biryani</h3>
+                    <p>Aromatic rice, rich spices and delicious flavours.</p>
+                    <strong class="food-price">₹249</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=700&q=85"
+                    alt="Traditional Indian rice meal"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Special Rice Meal</h3>
+                    <p>A comforting Indian-style meal with wonderful spices.</p>
+                    <strong class="food-price">₹179</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=700&q=85"
+                    alt="Indian curry dish"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Indian Curry</h3>
+                    <p>A rich, flavourful curry prepared with aromatic spices.</p>
+                    <strong class="food-price">₹199</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85"
+                    alt="Fresh and colourful Indian meal"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Veg Special</h3>
+                    <p>A tasty vegetarian choice with fresh ingredients.</p>
+                    <strong class="food-price">₹169</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <h2>🍝 Pasta & More</h2>
+
+        <div class="food-grid">
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=85"
+                    alt="Italian pasta with herbs"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Creamy Italian Pasta</h3>
+                    <p>Tender pasta with a creamy sauce and fresh herbs.</p>
+                    <strong class="food-price">₹179</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=85"
+                    alt="Delicious pasta dish"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Special Pasta</h3>
+                    <p>A hearty pasta dish with a delicious savoury sauce.</p>
+                    <strong class="food-price">₹199</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=85"
+                    alt="Fresh colourful salad"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Fresh Garden Salad</h3>
+                    <p>Crisp vegetables and fresh flavours in every bite.</p>
+                    <strong class="food-price">₹129</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <h2>🍰 Desserts & Drinks</h2>
+
+        <div class="food-grid">
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
+                    alt="Chocolate celebration cake"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Chocolate Cake</h3>
+                    <p>Rich chocolate layers for a sweet finish.</p>
+                    <strong class="food-price">₹129</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=85"
+                    alt="Ice cream dessert"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Ice Cream</h3>
+                    <p>A cool and creamy dessert for every occasion.</p>
+                    <strong class="food-price">₹89</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=85"
+                    alt="Fresh cup of coffee"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Hot Coffee</h3>
+                    <p>Freshly brewed coffee with a wonderful aroma.</p>
+                    <strong class="food-price">₹99</strong>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img
+                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=85"
+                    alt="Refreshing colourful drink"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=80';"
+                >
+                <div class="food-card-content">
+                    <h3>Refreshing Drink</h3>
+                    <p>A colourful, refreshing drink to enjoy with your meal.</p>
+                    <strong class="food-price">₹79</strong>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- FOOD MANAGEMENT / CRUD -->
+
+    <section class="management-section">
+        <h2>🧑‍🍳 Manage Food Items</h2>
+        <p>Add new items, edit details, and remove items from your menu.</p>
+
+        <form id="foodForm" class="food-form">
+            <input type="hidden" id="food_id">
+
+            <label for="food_name">Food Name</label>
+            <input type="text" id="food_name"
+                   placeholder="Enter food name" required>
+
+            <label for="category">Category</label>
+            <select id="category" required>
+                <option value="">Choose category</option>
+                <option value="Starters">Starters</option>
+                <option value="Main Course">Main Course</option>
+                <option value="Fast Food">Fast Food</option>
+                <option value="Desserts">Desserts</option>
+                <option value="Drinks">Drinks</option>
+            </select>
+
+            <label for="price">Price (₹)</label>
+            <input type="number" id="price"
+                   min="1" step="0.01"
+                   placeholder="Enter price" required>
+
+            <label for="description">Description</label>
+            <textarea id="description"
+                      placeholder="Describe the food item"
+                      required></textarea>
+
+            <label for="availability">Availability</label>
+            <select id="availability" required>
+                <option value="Available">Available</option>
+                <option value="Unavailable">Unavailable</option>
+            </select>
+
+            <button type="submit" id="submitBtn">Add Food Item</button>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Food Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Availability</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="foodTableBody">
+                    <tr>
+                        <td colspan="7">Loading food items...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <h3>Insha Food Ordering System</h3>
+    <p>Good food, happy moments, and unforgettable flavours.</p>
+    <p>© 2026 Insha Food. All rights reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

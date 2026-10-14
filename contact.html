@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Insha Food Ordering System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="logo">Insha Food 🍽️</a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="nav-button">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <p class="eyebrow">We Are Happy to Help</p>
+        <h1>Contact Insha Food 📩</h1>
+
+        <p>
+            Have a question about our menu, food items, or ordering system?
+            Send us a message. We would love to hear from you!
+        </p>
+    </section>
+
+    <section>
+        <h2>Get in Touch 🤎</h2>
+
+        <div class="food-grid">
+
+            <article class="food-card">
+                <div class="food-card-content">
+                    <h3>📍 Our Location</h3>
+                    <p>Insha Food Ordering System</p>
+                    <p>Please add your restaurant's actual address here.</p>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <div class="food-card-content">
+                    <h3>📞 Phone</h3>
+                    <p>Add your business phone number here.</p>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <div class="food-card-content">
+                    <h3>✉️ Email</h3>
+                    <p>Add your business email address here.</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="content-layout">
+        <div>
+            <h2>Send Us a Message 💌</h2>
+
+            <form id="contactForm" class="food-form">
+                <label for="customerName">Your Name</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="customerEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="customerEmail"
+                    name="customerEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="customerPhone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    name="customerPhone"
+                    placeholder="Enter your phone number"
+                >
+
+                <label for="messageSubject">Subject</label>
+                <select id="messageSubject" name="messageSubject" required>
+                    <option value="">Choose a subject</option>
+                    <option value="Food enquiry">Food enquiry</option>
+                    <option value="Order support">Order support</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="customerMessage">Your Message</label>
+                <textarea
+                    id="customerMessage"
+                    name="customerMessage"
+                    placeholder="Write your message here..."
+                    rows="5"
+                    required
+                ></textarea>
+
+                <button type="submit">Send Message</button>
+
+                <p id="contactStatus" aria-live="polite"></p>
+            </form>
+        </div>
+
+        <div>
+            <img
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80"
+                alt="Welcoming restaurant dining space"
+                style="width:100%; border-radius:18px;"
+            >
+
+            <h2>Business Hours 🕒</h2>
+            <p>Monday – Friday: 9:00 AM – 10:00 PM</p>
+            <p>Saturday – Sunday: 10:00 AM – 11:00 PM</p>
+            <p><em>These are sample hours. Update them to match your business.</em></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Share Your Feedback ⭐</h2>
+        <p>
+            Your suggestions help us improve our food ordering experience.
+            Tell us what you enjoyed and what we can do better.
+        </p>
+        <a href="menu.html" class="nav-button">Explore Our Menu</a>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <h3>Insha Food Ordering System</h3>
+    <p>Good food, happy moments, and unforgettable flavours.</p>
+    <p>© 2026 Insha Food. All rights reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
